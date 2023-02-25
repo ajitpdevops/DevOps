@@ -4,8 +4,6 @@
 - 
 
 
-
-
 # Article 1. Steps to change the Github default branch from master to main
 ## Step 1 
 ### create main branch locally, taking the history from master
