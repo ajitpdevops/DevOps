@@ -1,3 +1,7 @@
+
+
+
+
 # Article Ideas
 - Change a default branch
 - Generative AI for DevOps - https://www.uptime.build/post/generative-ai-for-devops-career-must-or-overhyped-bust
