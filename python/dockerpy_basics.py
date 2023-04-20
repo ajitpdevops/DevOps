@@ -27,4 +27,4 @@ client.containers.prune()
 # To run a container from an image
 # client.containers.run('ideasinc/g3_db', detach=True, name='g3_db', ports={'1433/tcp': 1455}, volumes=['/opt/data:/var/opt/mssql/data', '/opt/sandbox:/var/opt/mssql/sandbox'])
 
-client.containers.run('ideasinc/g3_db', detach=True, name='g3_db', ports={'1433/tcp': '1434', '1500/tcp': '1500'}, volumes={'/opt/data': {'bind': '/var/opt/mssql/data', 'mode': 'rw'}, '/opt/sandbox': {'bind': '/var/opt/mssql/sandbox', 'mode': 'rw'}})
+client.containers.run('ideasinc/g3_db', detach=True, name='g3_db', ports={'1433/tcp': '1434', '1500/tcp': '1500'}, volumes={'/opt/data': {'bind': '/var/opt/mssql/data', 'mode': 'rw'}, '/opt/sandbox': {'bind': '/var/opt/mssql/sandbox', 'mode': 'rw'}}, environment={'AWS_PROFILE': 'Default', 'AWS_REGION': 'use-east-2'})

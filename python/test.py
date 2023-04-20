@@ -1,16 +1,17 @@
 import argparse
 import docker
 
-def run_container(image_name, name=None, protocol='tcp', ports=[], volumes=[], environment=[]):
+def run_con(image_name, name=None, protocol='tcp', ports, volumes, environment):
     # Define default parameters
     default_params = {
         'name': name,
         'protocol': 'tcp',
-        'ports': [],
-        'volumes': [],
-        'environment': [] 
+        'ports': None,
+        'volumes': None,
+        'environment': None 
     }
 
+    print(f"image_name: {image_name}")
     print(f'ports: {ports}')
     print(f'volumes: {volumes}')
     print(f'environment: {environment}')
@@ -86,13 +87,13 @@ if __name__ == '__main__':
     parser.add_argument('image_name', type=str, help='Docker image name')
     parser.add_argument('--name', type=str, help='Container name')
     parser.add_argument('--protocol', type=str, default='tcp', help='Port protocol (tcp or udp))')
-    parser.add_argument('--port', type=str, nargs='+', action='append', help='Port mappings in the format "host_port:container_port"')
+    parser.add_argument('--port', type=str, nargs='+', help='Port mappings in the format "host_port:container_port"')
     parser.add_argument('--volume', type=str, nargs='+', help='Volume mappings in the format "host_path:container_path"')
     parser.add_argument('--environment', type=str, nargs='+', help='Environment variables in the format "var_name=var_value"')
     parser.add_argument('--clean_host_volume_dirs', type=bool, default=False, help='Clean host volume directories')
     
     args = parser.parse_args()
     
-    run_container(args.image_name, name=args.name, protocol=args.protocol, ports=args.port, volumes=args.volume, environment=args.environment)
+    run_con(args.image_name, name=args.name, protocol=args.protocol, ports=args.port, volumes=args.volume, environment=args.environment)
 
     
