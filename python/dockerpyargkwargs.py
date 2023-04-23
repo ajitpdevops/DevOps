@@ -50,4 +50,4 @@ def func_args(*args, **kwargs):
 
 
 # Example usage
-func_args('ideasinc/g3_db', name='g3_db', ports=['1433:1434','1500:1500'], volumes=['/opt/data:/var/opt/mssql/data', '/opt/sandbox:/var/opt/mssql/sandbox'])
+func_args('devopsandai/g3_db', name='g3_db', ports=['1433:1434','1500:1500'], volumes=['/opt/data:/var/opt/mssql/data', '/opt/sandbox:/var/opt/mssql/sandbox'])

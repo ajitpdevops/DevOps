@@ -5,7 +5,7 @@ client = docker.from_env()
 
 
 # Stop running containers
-runningContainers = client.containers.list(filters={"status": "running", "ancestor": 'ideasinc/g3_db'})
+runningContainers = client.containers.list(filters={"status": "running", "ancestor": 'devopsandai/g3_db'})
 
 if (runningContainers):
     print('Container is already running.')
