@@ -1,6 +1,5 @@
 import os 
 
-"""
 x = os.system("ls -l")
 
 os.getcwd()
@@ -35,7 +34,6 @@ os.walk("/etc/default")
 list(os.walk("/etc/default"))
 # Output => [('/etc/default', ['grub.d'], ['locale', 'rsync', 'ssh', 'cron', 'dbus', 'apport', 'cacerts', 'networkd-dispatcher', 'docker', 'motd-news', 'pollinate', 'ufw', 'useradd', 'open-iscsi', 'nss', 'mdadm', 'irqbalance', 'console-setup', 'bsdmainutils', 'keyboard', 'cryptdisks']), ('/etc/default/grub.d', [], ['50-cloudimg-settings.cfg'])]
 
-"""
 
 for dirname, dirpath, files in os.walk("/etc/default"):
     print(dirname)
