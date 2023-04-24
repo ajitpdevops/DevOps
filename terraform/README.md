@@ -30,12 +30,22 @@ Understand basic Terraform Commands
 5. terraform destroy
     
 
-    
-
 Understand Terraform Language Basics
-1. Understand Blocks
+1. Understand Top Level Blocks
+    - Terraform settings block
+    - Provider Block
+    - Resources 
+    - Input Variable Block
+    - Output Values 
+    - Local values 
+    - Data Sources 
+    - Module 
 2. Understand Arguments, Attributes & Meta-Arguments
+    - Arguments 
+    - Attributes 
+    - Meta-Arguments | providers, for each | count 
 3. Understand Identifiers
+    - 
 4. Understand Comments
 
     ```t
