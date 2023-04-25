@@ -61,3 +61,11 @@ Understand Terraform Language Basics
         instance_type = var.instance_type # Argument with value as expression (Variable value replaced from varibales.tf
         }
     ```
+# Usage 
+1. terraform block 
+2. provider block 
+3. resource block 
+4. terraform plan 
+5. terraform state file
+6. terraform plan -destroy 
+
