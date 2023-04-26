@@ -15,7 +15,7 @@ PS C:\Users\idnajp\Documents\01_TechOps\all-Info\PSTests> $username = 'idnajp'
 PS C:\Users\idnajp\Documents\01_TechOps\all-Info\PSTests> $password = '<my_password>'
 PS C:\Users\idnajp\Documents\01_TechOps\all-Info\PSTests> $creds = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $Username, (ConvertTo-SecureString -String $Password -AsPlainText -Force)
 PS C:\Users\idnajp\Documents\01_TechOps\all-Info\PSTests> $linuxmachine = 'mn4dbldcisl004'
-PS C:\Users\idnajp\Documents\01_TechOps\all-Info\PSTests> Set-SCPItem -ComputerName $linuxmachine -Credential $creds -Path .\test.py -Destination /tmp -Verbose
+PS C:\Users\idnajp\Documents\01_TechOps\all-Info\PSTests> Set-SCPItem -ComputerName $linuxmachine -Credential $creds -Path .\G3\pyFunctions\runDockerContainer.py -Destination /tmp -Verbose
 VERBOSE: Using SSH Username and Password authentication for connection.
 VERBOSE: ssh-ed25519 Fingerprint for mn4dbldcisl004: 36:92:3c:63:22:ee:98:46:74:15:1c:b1:f1:db:81:2a
 VERBOSE: Fingerprint matched trusted ssh-ed25519 fingerprint for host mn4dbldcisl004
