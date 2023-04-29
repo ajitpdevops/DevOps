@@ -2,7 +2,6 @@
 resource "aws_security_group" "allow-ssh" {
   name        = "allow-ssh"
   description = "Allow SSH inbound traffic"
-  vpc_id      = "vpc-086c69276f8630722"
   
   ingress {
     description = "SSH from anywhere"
@@ -31,7 +30,6 @@ resource "aws_security_group" "allow-ssh" {
 resource "aws_security_group" "allow-web" {
   name        = "allow-web"
   description = "Allow HTTP inbound traffic"
-  vpc_id      = "vpc-086c69276f8630722"
   
   ingress {
     description = "HTTP from anywhere"
