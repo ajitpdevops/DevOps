@@ -40,3 +40,6 @@ build/
 
 ### VS Code ###
 .vscode/
+terraform/00_basics/terraform.tfstate
+terraform/00_basics/terraform.tfstate.backup
+terraform/00_basics/.terraform/providers/registry.terraform.io/hashicorp/aws/4.64.0/linux_amd64/terraform-provider-aws_v4.64.0_x5
