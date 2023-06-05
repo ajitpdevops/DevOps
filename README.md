@@ -1,11 +1,12 @@
-AWS Security - 
-1. Security group 
-2. Set up an alert as soon as somebody creates an instance with allow all IP security group.
 
+# About me:
+Hi, my name [Ajit Patil](https://github.com/whoajitpatil). An experienced Senior DevOps professional with a passion for automation, collaboration, and problem-solving. I bring a wealth of knowledge in cloud technologies, containerization, and deployment pipelines to any project I work on. With a track record of success in managing complex infrastructures, I thrive in fast-paced environments and am always looking for new challenges to tackle. As a strong believer in the power of open source, I am excited to share my skills and collaborate with others in the community through this GitHub repo.
 
-# Terraform Destroy
-terraform destroy -auto-approve
+# My GitHub Stats:
+[![Ajit's GitHub stats](https://github-readme-stats.vercel.app/api?username=whoajitpatil&show_icons=true&theme=radical)]
 
-# Delete Files
-rm -rf .terraform*
-rm -rf terraform.tfstate*
+# My GitHub Top Languages:
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=whoajitpatil&layout=compact&theme=radical)]
+
+My Work with GitHub:
+1. 
