@@ -4,9 +4,9 @@ Kubernetes follows a client-server architecture. The Kubernetes API server acts 
 
 ## K8s Cluster Components
 - Master Node
-    - API Server : Frontend for the kubernetes control plane
-    - Scheduler : Responsible for distributing work or containers across multiple nodes
-    - Controller Manager : 
+    - API Server : Frontend for the kubernetes control plane. the users, mdmt devices, CLI talks to K8s via API server
+    - Scheduler : The Scheduler is responsible for distributing work or containers across multiple nodes. It looks for newly created containers and assigns them to nodes.
+    - Controller Manager : The controllers are the brain behind orchestration. They are responsible for noticing and responding when nodes, containers or end points goes down.
         - Node Controller : Responsible for noticing and responding when nodes go down.
         - Replication Controller : Responsible for maintaining the correct number of pods for every replication controller object in the system.
         - Endpoints Controller : Populates the Endpoints object (that is, joins Services & Pods).
@@ -22,6 +22,7 @@ Kubernetes follows a client-server architecture. The Kubernetes API server acts 
     - kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
     - kubectl cluster-info
     - kubectl get nodes
+    - kubectl get pods -o wide
 
 # Kubernetes Objects
 - Kubernetes objects are persistent entities in the Kubernetes system. Kubernetes uses these entities to represent the state of your cluster. Specifically, they can describe:
@@ -42,3 +43,4 @@ metadata:
 
 spec: 
 ```
+

@@ -1,5 +1,8 @@
 # Service in Kubernetes
-Service in kubernetes is an abstraction layer which defines a logical set of pods and a policy by which to access them. Services enable a loose coupling between dependent pods. A service is defined using YAML (preferred) or JSON, like all Kubernetes objects.
+In Kubernetes, a Service is a method for exposing a network application that is running as one or more Pods in your cluster.Service in kubernetes is an abstraction layer which defines a logical set of pods and a policy by which to access them. It enable a loose coupling between dependent pods. A service is defined using YAML (preferred) or JSON, like all Kubernetes objects.
+
+A key aim of Services in Kubernetes is that you don't need to modify your existing application to use an unfamiliar service discovery mechanism. You can run code in Pods, whether this is a code designed for a cloud-native world, or an older app you've containerized. You use a Service to make that set of Pods available on the network so that clients can interact with it.
+
 
 Services can be exposed in different ways by specifying a type in the service specification. The different types of services are:
 - NodePort : Exposes the service on each Node’s IP at a static port (the NodePort). A ClusterIP service, to which the NodePort service will route, is automatically created. You’ll be able to contact the NodePort service, from outside the cluster, by requesting <NodeIP>:<NodePort>.

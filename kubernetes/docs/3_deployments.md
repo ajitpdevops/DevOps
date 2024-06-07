@@ -15,4 +15,3 @@ Kubernetes deployments are a high-level abstraction that can be used to deploy a
 - kubectl rollout undo deployment/myapp-deployment
 - kubectl rollout undo deployment/myapp-deployment --to-revision=2
 
-
