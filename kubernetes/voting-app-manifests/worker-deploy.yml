@@ -21,3 +21,7 @@ spec:
       containers:
       - name: worker-app
         image: kodekloud/examplevotingapp_worker:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
