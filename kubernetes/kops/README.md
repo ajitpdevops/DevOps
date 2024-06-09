@@ -11,8 +11,14 @@ aws s3api put-bucket-versioning --bucket us-east-1-fleetmanbucket1 --versioning-
 export NAME=myfirstcluster.k8s.local
 export KOPS_STATE_STORE=s3://us-east-1-fleetmanbucket1
 
-ssh-keygen -b 2048 -t rsa ~/.ssh/id_rsa
 
+# Create a ssh key and public key to kops secret store
+ssh-keygen -b 2048 -t rsa ~/.ssh/id_rsa
+kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
+
+
+
+# Create a cluster
 kops create cluster \
     --name ${NAME} \
     --state ${KOPS_STATE_STORE} \
