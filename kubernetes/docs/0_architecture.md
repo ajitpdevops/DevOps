@@ -35,7 +35,7 @@ Kubernetes follows a client-server architecture. The Kubernetes API server acts 
 
 - kubernetes uses YAML files to define and create objects. YAML is a human-readable language that is used as the format for configuration files in many applications. All yml files must have the following structure:
 
-```
+```yaml
 apiVersion:
 kind:
 metadata:
@@ -44,3 +44,27 @@ metadata:
 spec: 
 ```
 
+## KUbectl common commands 
+
+```bash
+
+kubectkl port-forward svc/fleetman-webapp 8080:8080
+kubectl get pods
+kubectl get pods -o wide
+kubectl get nodes
+kubectl get services
+kubectl get deployments
+kubectl get replicaset
+kubectl get all
+kubectl describe pod <pod-name>
+kubectl describe service <service-name>
+kubectl describe deployment <deployment-name>
+kubectl describe replicaset <replicaset-name>
+kubectl describe node <node-name>
+kubectl logs <pod-name>
+kubectl exec -it <pod-name> -- /bin/bash
+kubectl delete pod <pod-name>
+kubectl delete service <service-name>
+
+
+```
