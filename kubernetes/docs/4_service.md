@@ -16,3 +16,5 @@ Services can be exposed in different ways by specifying a type in the service sp
 - kubectl describe service <name_of_service>
 - kubectl get all
 - kubectl edit service <name_of_service>
+- kubectl port-forward svc/<name_of_service> <local_port>:<service_port>
+- kubectl delete service <name_of_service>

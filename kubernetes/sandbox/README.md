@@ -1,3 +1,5 @@
+This is created to provide a sandbox environment for learning Kubernetes concepts and practicing hands-on exercises. The sandbox environment is a pre-configured Kubernetes cluster that you can use to experiment with different Kubernetes features and resources.
+
 # Resources - 
 - https://www.youtube.com/watch?v=cipDJwDWWbY | A deep dive into Amazon EKS 
 - 
@@ -57,8 +59,6 @@ eksctl create addon --name aws-ebs-csi-driver \
     --force    
                 
 
-# Optional - update the `kubeconfig` file 
-aws eks update-kubeconfig --name eksdemocluster --region us-east-1 
 
 # List EKS clusters
 eksctl get cluster
@@ -81,3 +81,9 @@ eksctl delete nodegroup --cluster=eksdemocluster --name=eksdemocluster-ng-public
 
 # Delete Cluster
 eksctl delete cluster --name=eksdemocluster --region=us-east-1
+
+
+# TODO List 
+1. Create a public EKS cluster 
+2. Create two node groups - public and private
+
