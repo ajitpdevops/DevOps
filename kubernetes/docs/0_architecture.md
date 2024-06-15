@@ -80,10 +80,22 @@ kubectl describe node <node-name>
 kubectl get replicaset
 kubectl describe replicaset <replicaset-name>
 
+## Volume 
+kubectl get pvc
+kubectl get pv
 
+kubectl get volumeattachments
+kubectl get storageclass
+kubectl delete volumeattachment <volume-attachment-name>
+
+## Events 
+kubectl get events --sort-by='.metadata.creationTimestamp'
 
 
 ```
 
 ## Tools
 - An open source to switch k8s contex easily - https://github.com/ahmetb/kubectx.
+
+
+Playitc00l

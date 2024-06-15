@@ -8,7 +8,7 @@ spec:
   storageClassName: ebs-ssd
   resources:
     requests:
-      storage: 10Gi
+      storage: 7Gi
 
 --- 
 

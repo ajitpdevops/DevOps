@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
 
 output "cluster_endpoint" {
   description = "Endpoint for EKS control plane"
@@ -19,4 +17,8 @@ output "region" {
 output "cluster_name" {
   description = "Kubernetes Cluster Name"
   value       = module.eks.cluster_name
+}
+
+output "worker_iam_role_arns" {
+  value = {for name, ng in module.eks.eks_managed_node_groups : name => ng.iam_role_arn}
 }
