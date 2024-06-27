@@ -57,6 +57,8 @@ eksctl create addon --name aws-ebs-csi-driver \
     --force    
                 
 
+# Optional - update the `kubeconfig` file 
+aws eks update-kubeconfig --name eksdemocluster --region us-east-1 
 
 # List EKS clusters
 eksctl get cluster

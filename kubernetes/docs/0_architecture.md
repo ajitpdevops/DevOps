@@ -48,23 +48,54 @@ spec:
 
 ```bash
 
-kubectkl port-forward svc/fleetman-webapp 8080:8080
+kubectl get all
+kubectl get all --all-namespaces
+
+## Pod Specific commands
 kubectl get pods
 kubectl get pods -o wide
-kubectl get nodes
-kubectl get services
-kubectl get deployments
-kubectl get replicaset
-kubectl get all
 kubectl describe pod <pod-name>
-kubectl describe service <service-name>
-kubectl describe deployment <deployment-name>
-kubectl describe replicaset <replicaset-name>
-kubectl describe node <node-name>
-kubectl logs <pod-name>
 kubectl exec -it <pod-name> -- /bin/bash
+kubectl logs <pod-name>
 kubectl delete pod <pod-name>
+
+## Kubectl Service specific commands
+kubectl get services
+kubectl describe service <service-name>
+kubectl port-forward svc/fleetman-webapp 8080:8080
 kubectl delete service <service-name>
+
+## Deployment specific commands
+kubectl get deployments
+kubectl describe deployment <deployment-name>
+kubectl delete deployment <deployment-name>
+
+
+## Node specific commands
+kubectl get nodes -o wide
+
+kubectl describe node <node-name>
+
+## Other Resources 
+kubectl get replicaset
+kubectl describe replicaset <replicaset-name>
+
+## Volume 
+kubectl get pvc
+kubectl get pv
+
+kubectl get volumeattachments
+kubectl get storageclass
+kubectl delete volumeattachment <volume-attachment-name>
+
+## Events 
+kubectl get events --sort-by='.metadata.creationTimestamp'
 
 
 ```
+
+## Tools
+- An open source to switch k8s contex easily - https://github.com/ahmetb/kubectx.
+
+
+Playitc00l

@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: queue
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -15,6 +15,13 @@ spec:
       containers:
       - name: queue
         image: richardchesterwood/k8s-fleetman-queue:release2
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "100m"
+        #   limits:
+        #     memory: "64Mi"
+        #     cpu: "100m"
         
 --- 
 apiVersion: apps/v1
@@ -37,6 +44,13 @@ spec:
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: production-microservice
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "100m"
+        #   limits:
+        #     memory: "64Mi"
+        #     cpu: "100m"
     
 --- 
 
@@ -60,6 +74,13 @@ spec:
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: production-microservice        
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "100m"
+        #   limits:
+        #     memory: "64Mi"
+        #     cpu: "100m"
 
 --- 
 apiVersion: apps/v1
@@ -81,14 +102,22 @@ spec:
         image: richardchesterwood/k8s-fleetman-api-gateway:release2
         env:
           - name: SPRING_PROFILES_ACTIVE
-            value: production-microservice        
+            value: production-microservice
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "100m"
+        #   limits:
+        #     memory: "64Mi"
+        #     cpu: "100m"
+
 --- 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: webapp
@@ -103,3 +132,10 @@ spec:
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: production-microservice     
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "100m"
+        #   limits:
+        #     memory: "64Mi"
+        #     cpu: "100m"
