@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webapp
+  labels: 
+    app: webapp
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template: 
+    metadata:
+      labels:
+        app: webapp
+    spec: 
+      containers:
+      - name: webapp
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+
+--- 
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: activemq
+  labels:
+    app: activemq
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: activemq
+  template:
+    metadata:
+      labels:
+        app: activemq
+    spec:
+      containers:
+      - name: activemq
+        image: richardchesterwood/k8s-fleetman-queue:release1
