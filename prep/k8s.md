@@ -1,6 +1,19 @@
 # AWS Specific Questions
 
 - How do we manage VPC in AWS?
+
+  - Subnets
+  - Route Tables
+  - IGW
+  - NAT Gateway
+  - NAT Instances
+  - EIP
+  - Network ACL
+  - Security Groups
+  - VPC Peering
+  - Direct Connect
+  -
+
 - How do we manage SSO in AWS?
 - Hosting zones in AWS?
 - Landing Zones in AWS?
@@ -132,3 +145,89 @@ pipeline {
 ```
 
 This is a very basic example and your actual setup would likely be more complex. You would need to customize these examples to fit your specific needs.
+
+### What are the AWS DR (Disaster REcovery) strategies?
+
+- Backup & Restore (RPO/RTO hours)
+  - Low priority use case
+  - Provision all AWS resources after event
+  - Restore backups after events
+- Pilot Light (RPO/RTO 10 minutes)
+  - Data Live
+  - Service idle
+  - Provision Some AWS resources and scale after event
+- Warm Standby (RPO/RTO MInutes)
+  - Always runnign but smaller
+  - Business Critical
+  - Scale Resources after disaster event
+- Multi-Site Active/Active (Real-Time)
+  - Zero Downtime
+  - Near Zero Data Loss
+  - Mission Critical Services
+
+## How do prepare for the Big Day Spike?
+
+- Pre-warm Load balancers
+- Scheulded autoscaling
+- Keep AMIs lightwieght
+- Run IEM (Infra Event Mgmt) to handle high traffic
+- Use Database proxy
+
+## How do handle the same problem with Microservices in EKS?
+
+- Overprovisioner
+- Reducing container image size
+
+## What is Helm in Kubernetes?
+
+Helm is a package manager for Kubernetes, which helps you define, install, and upgrade even the most complex Kubernetes applications. Helm uses a packaging format called charts, which are collections of files that describe a related set of Kubernetes resources. It simplifies the management of Kubernetes applications by providing a way to deploy, configure, and manage applications through reusable and shareable charts.
+
+## What are Helm charts?
+
+Helm charts are packages of pre-configured Kubernetes resources. A chart is a collection of files that describe a related set of Kubernetes resources. They include:
+
+`Chart.yaml`: Contains metadata about the chart.
+`values.yaml`: The default configuration values for the chart.
+`Templates` directory: Contains templates that, when combined with values, generate Kubernetes manifest files.
+`requirements.yaml`: Lists dependencies for the chart. Charts can be stored locally or in a chart repository.
+
+## Helm Commands
+
+```bash
+helm install myrelease myrepo/mychart
+helm install myrelease ./mychart
+helm install myrelease myrepo/mychart -f custom-values.yaml
+helm upgrade myrelease myrepo/mychart
+helm upgrade myrelease myrepo/mychart -f custom-values.yaml
+helm create mychart
+helm list
+helm list --namespace mynamespace
+helm list --all-namespaces
+helm rollback myrelease 1
+helm history myrelease
+
+```
+
+### What are helm hooks?
+
+Helm hooks allow you to intervene at specific points in a release lifecycle, such as before or after installing, upgrading, or deleting a release. Hooks are defined in the chart templates using special annotations.
+Common hooks include pre-install, post-install, pre-upgrade, post-upgrade, pre-delete, and post-delete.
+
+For example:
+
+```yml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pre-install-job
+  annotations:
+    "helm.sh/hook": pre-install
+spec:
+  template:
+    spec:
+      containers:
+        - name: job
+          image: busybox
+          command: ["sh", "-c", "echo Hello from the pre-install hook!"]
+      restartPolicy: Never
+```
