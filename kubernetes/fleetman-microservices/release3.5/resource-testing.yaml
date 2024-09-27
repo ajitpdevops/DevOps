@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fleetman-queue
+spec:
+  selector:
+    matchLabels:
+      app: fleetman-queue
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: fleetman-queue
+    spec:
+      containers:
+      - name: fleetman-queue
+        image: richardchesterwood/k8s-fleetman-queue:release2
+        resources:
+          requests:
+            memory: "5000Mi"
+            cpu: "1000m"
+          limits:
+            memory: "6000Mi"
+            cpu: "1000m"
+  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  selector:
+    app: fleetman-queue
+  ports:
+  - name: http
+    port: 8161
+    nodePort: 30010
+  - name: endpoint
+    port: 61616
+  type: NodePort
+  

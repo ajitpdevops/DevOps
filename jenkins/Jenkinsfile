@@ -1,0 +1,32 @@
+pipeline {
+    agent {
+        label 'HybridSQLBackInt'
+    }
+
+    stages {
+        stage('Execute python script') {
+            steps {
+                script {
+                    echo 'Executing python script...'
+                    def pythonScript = 'C:\\Users\\idnajp\\Desktop\\test.py' 
+                    def process = "C:\\Programs\\Python37\\python ${pythonScript}"
+                    def output = bat returnStdout: true, script: process
+                    
+                    echo 'Execution completed....'
+                    echo "Python Script Output: \n${output}"
+                    
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
+}
